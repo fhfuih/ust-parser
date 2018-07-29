@@ -10,7 +10,7 @@ A simple navigation page for HKUST students
 ## To-do
 
 - [ ] Search bar
-- [ ] Favicon
+- [x] Favicon
 - [ ] Fully offline version (if possible)
 - [ ] Put links and data inside a `yaml` and use some fancy build tools
 - [ ] More links if needed
