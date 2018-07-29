@@ -1,0 +1,365 @@
+<head>
+    <title>UST::parser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" integrity="sha256-ncjDAd2/rm/vaNTqp7Kk96MfSeHACtbiDU9NWKqNuCI=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js" integrity="sha256-0gIvTkdsp0OOeV8tx3UTdi3ehppGwZbzQMvZJYhbzsE=" crossorigin="anonymous"></script>
+    <style>
+        /* background */
+        body.pushable>.pusher {
+            background-color: rgb(250,250,250);
+        }
+
+        #header-background {
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* title typography */
+        #page-title {
+            font-size: 4rem;
+            font-weight: lighter;
+        }
+
+        /* search bar centering and margin adjustment */
+        #search-bar-container {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #search-bar {
+            width: 100%;
+        }
+
+        /* .inverted.segment do not have borders by default,
+        hence will increase its height by border width on hover (removing .inverted)
+        and cause noticable displacement inside the container */
+        .ui.inverted.main.segment {
+            border: 1px solid transparent;
+            border-top-width: 2px;
+        }
+
+        .ui.main.segment {
+            transition: all .3s;
+            cursor: pointer;
+            -webkit-box-shadow: 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+            box-shadow: 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
+        }
+        
+        .ui.main.segment.raised {
+            -webkit-box-shadow: 0 2px 4px 0 rgba(34,36,38,.20), 0 2px 10px 0 rgba(34,36,38,.25);
+            box-shadow: 0 2px 4px 0 rgba(34,36,38,.20), 0 2px 10px 0 rgba(34,36,38,.25);
+        }
+
+        .ui.padded.nav.segment {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        .ui.link.list .item, .ui.link.list .item a:not(.ui), .ui.link.list a.item{
+            color: rgba(0,0,0,.6);
+        }
+
+        /* icons in main segment buttons */
+        .ui.header>.icon {
+            font-size: 1.2em;
+        }
+
+        /* sidebar */
+        .ui.top.upper.attached.button {
+            border-width: 0;
+            border-radius: 0 .28571429rem .28571429rem 0;
+            position: absolute;
+            top: 1.5rem;
+            left: 0;
+            z-index: 2;
+        }
+        .ui.menu .item {
+            line-height: unset;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="F:\PICS\DUFAB_Dark_Red.png" alt="Background" class="ui fluid image" id="header-background"> -->
+    <aside class="ui sidebar inverted large vertical menu">
+        <div class="item">
+            <header class="ui vertical segment inverted center aligned icon header">
+                <i class="compass outline icon"></i>
+                <div class="content">UST::parser</div>
+            </header>
+        </div>
+        <a href="#" class="item"><i class="github icon"></i>View on Github</a>
+        <a href="#" class="item"><i class="download icon"></i>Offline Version</a>
+        <a href="#" class="item"><i class="paper plane icon"></i>Deploy your own webpage with HKUST ITSC</a>
+    </aside>
+    <div class="pusher">
+        <button class="ui black top upper attached big icon button toggler">
+            <i class="bars icon"></i>
+        </button>
+        <script>
+            $(".sidebar.menu").sidebar("attach events", ".toggler");
+        </script>
+        <header class="ui vertical basic very padded segment">
+            <h1 class="ui center aligned header" id="page-title">UST::parser</h1>
+            <div class="ui doubling centered grid container" id="search-bar-container">
+                <div class="ten wide column">
+                    <div class="ui fluid search">
+                        <div class="ui icon disabled input" id="search-bar">
+                            <input type="search" class="prompt" placeholder="Not yet done :(">
+                            <i class="search icon"></i>
+                        </div>
+                        <div class="result"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="ui vertical basic segment">
+            <div class="ui doubling stackable relaxed four column grid container">
+                <div class="column">
+                    <div class="ui inverted red padded main segment">
+                        <h2 class="ui header">
+                            <i class="globe icon"></i>
+                            <div class="content">Network</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <a href="http://itsc.ust.hk/services/general-it-services/wifi/non-windows-device/"
+                                class="item">Wi-Fi Access</a>
+                            <a href="http://itsc.ust.hk/apps/vpn/connect.html" class="item">VPN</a>
+                            <div class="item">
+                                <a href="https://itsc.ust.hk/cyber-security/2FA">2FA (Two Factor Authentication)</a>
+                                <div class="list">
+                                    <a href="http://myaccount.ust.hk/duoportal" class="item">Duo Self-Service Portal</a>
+                                    <a href="http://itsc.ust.hk/2fa/bypass" class="item">Duo Bypass Code</a>
+                                    <a href="http://itsc.ust.hk/services/cyber-security/duo/update-your-duo-mobile-device-records"
+                                        class="item">Mobile Lost / Change</a>
+                                </div>
+                            </div>
+                            <a href="http://itsc.ust.hk/services/general-it-services/user-account/manage-my-account/"
+                                class="item">Account Management</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted teal padded main segment">
+                        <h2 class="ui header">
+                            <i class="wrench icon"></i>
+                            <div class="content">Tools</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <div class="item">
+                                <a href="https://ilearn.ust.hk/">iLearn</a>
+                                <div class="list">
+                                    <a href="https://canvas.ust.hk/" class="item">Canvas</a>
+                                    <a href="https://asset.ust.hk/asset/mobile.do" class="item">SFQ</a>
+                                    <a href="https://prsmob.ust.hk/ars/mobile/home/iLearn" class="item">iPRS</a>
+                                </div>
+                            </div>
+                            <a href="http://pathadvisor.ust.hk/" class="item">Path Advisor</a>
+                            
+                            <div class="item">
+                                <a href="https://www.office.com/">Office 365</a>
+                                <div class="list">
+                                    <a href="http://o365.ust.hk/" class="item">Outlook Email</a>
+                                    <a href="https://portal.office.com/OLS/MySoftware.aspx" class="item">Desktop Application</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted yellow padded main segment">
+                        <h2 class="ui header">
+                            <i class="lightbulb icon"></i>
+                            <div class="content">Freshman</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <div class="item">
+                                <div>Application for Admission</div>
+                                <div class="list">
+                                    <a href="https://www.ab.ust.hk/applyUG" class="item">UG Application</a>
+                                    <a href="https://www.ab.ust.hk/applyPG" class="item">PG Application</a>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>New Student Registration</div>
+                                <div class="list">
+                                    <a href="http://arr.ust.hk/ug_reg" class="item">UG Registration</a>
+                                    <a href="http://arr.ust.hk/pg_reg" class="item">PG Registration</a>
+                                </div>
+                            </div>
+                            <a href="http://fys.ust.hk/" class="item">New Student Orientation (First Year Success)</a>
+                            <a href="http://nlss.ust.hk/" class="item">Non-local Student Guide</a>
+                            <a href="https://www.ab.ust.hk/applyhall" class="item">Hall Application</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted green padded main segment">
+                        <h2 class="ui header">
+                            <i class="puzzle piece icon"></i>
+                            <div class="content">Facilities</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <a href="https://w6.ab.ust.hk/fbs" class="item">Facilities Booking System</a>
+                            <a href="https://library.ust.hk/" class="item">Library</a>
+                            <a href="https://lbbooking.ust.hk/" class="item">Library Room Booking</a>
+                            <div class="item">
+                                <a href="https://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/">Printing Facilities</a>
+                                <div class="list">
+                                    <a href="http://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/satellite-printers/#setup"
+                                        class="item">Multi-functions &amp; Satellite Printer</a>
+                                    <a href="http://library.ust.hk/services/facilities/copying-scanning-printing/#wireless"
+                                        class="item">Library Printer</a>
+                                    <a href="https://pmt.ust.hk:8443/printbudget/Purchase.jsp" class="item">Purchase Print Budget</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted purple padded main segment">
+                        <h2 class="ui header">
+                            <i class="thumbtack icon"></i>
+                            <div class="content">Faculty</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <a href="http://shrl.ust.hk/" class="item">SHRLO (Student Housing &amp; Residential Life Office)</a>
+                            <!-- Not sure whether to put SHRLO at the top or the bottom
+                            because although they are always troublesome, questioned and referred to,
+                            they put a lot weightless tongue-in-cheek policy on their website -->
+                            <a href="https://sao.ust.hk/" class="item">SAO (Student Affairs Office)</a>
+                            <a href="https://sfao.ust.hk/" class="item">SFAO (Scholarships &amp; Financial Aid Office)</a>
+                            <a href="http://arr.ust.hk/" class="item">ARRO (Academic Records &amp; Registration Office)</a>
+                            <a href="https://itsc.ust.hk/" class="item">ITSC (Information Technology Service Center)</a>
+                            <a href="https://counsel.ust.hk/" class="item">Counseling &amp; Wellness Center</a>
+                            <a href="https://www.ust.hk/academics/schools-programs-office" class="item">Schools &amp; Programs Offices</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted blue padded main segment">
+                        <h2 class="ui header">
+                            <i class="graduation cap icon"></i>
+                            <div class="content">Academic</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <a href="http://my.ust.hk/" class="item">My Portal</a>
+                            <a href="http://arr.ust.hk/schedule" class="item">Class Schedule &amp; Quota</a>
+                            <a href="http://prog-crs.ust.hk/" class="item">Program &amp; Course Catalog</a>
+                            <a href="https://crtran.ust.hk/" class="item">Credit Transfer for Undergraduates</a>
+                            <a href="http://petergao.net/ustpastpaper/index.php" class="item">Past Paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted pink padded main segment">
+                        <h2 class="ui header">
+                            <i class="flask icon"></i>
+                            <div class="content">Courses</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <div class="item">
+                                <a href="http://cle.ust.hk/">Center for Language Education</a>
+                                <div class="list">
+                                    <a href="http://cle.ust.hk/tests/elpa/" class="item">ELPA</a>
+                                    <a href="https://feedback.cle.ust.hk/" class="item">CLE Assignment Feedback</a>
+                                </div>
+                            </div>
+                            <a href="http://hlth1010.ust.hk/" class="item">HLTH 1010</a>
+                            <a href="https://urop.ust.hk/" class="item">UROP</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted orange padded main segment">
+                        <h2 class="ui header">
+                            <i class="users icon"></i>
+                            <div class="content">Forums</div>
+                        </h2>
+                    </div>
+                    <div class="ui padded nav segment spoiler">
+                        <div class="ui relaxed large link list">
+                            <a href="https://ust.space/" class="item">UST Space</a>
+                            <a href="http://ug.msss.ust.hk/cwiki_home" class="item">Cwiki (Mainland Chinese)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui inverted olive padded main segment">
+                        <h2 class="ui header">
+                            <i class="coffee icon"></i>
+                            <div class="content">Living</div>
+                        </h2>
+                    </div>
+                    <div class="spoiler">
+                        <div class="ui padded top attached nav segment">
+                            <div class="ui relaxed large link list">
+                                <a href="https://www.immd.gov.hk/eng/services/hkid.html" class="item">Hong Kong ID Card</a>
+                                <a href="http://www.mtr.com.hk/en/customer/main/index.html" class="item">MTR Services</a>
+                                <a href="https://www.octopus.com.hk/" class="item">Octopus</a>
+                                <a href="https://www.discoverhongkong.com/" class="item">Discover Hong Kong</a>
+                                <a href="http://www.hko.gov.hk/contente.htm" class="item">Hong Kong Observatory</a>
+                            </div>
+                        </div>
+                        <div class="ui bottom attached compact info message">
+                            <p>Links in this section are all directing to <strong>external sites</strong></p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <script>
+                function expand(elem) {
+                    elem.removeClass("inverted");
+                    elem.addClass("raised");
+                    elem.parent().children(".spoiler").show("normal");
+                }
+    
+                function collapse(elem) {
+                    if (!elem.hasClass("inverted")) {
+                        elem.addClass("inverted");
+                    }
+                    elem.removeClass("raised");
+                    elem.parent().children(".spoiler").hide("normal");
+                }
+    
+                $(".spoiler").hide();
+    
+                $(".main.segment").mouseenter(function () {
+                    if ($(this).hasClass("inverted")) {
+                        $(this).removeClass("inverted");
+                    }
+                });
+                $(".main.segment").mouseleave(function () {
+                    if (!$(this).hasClass("raised")) {
+                        $(this).addClass("inverted");
+                    }
+                });
+                $(".main.segment").click(function () {
+                    if ($(this).hasClass("raised")) {
+                        collapse($(this));
+                    } else {
+                        expand($(this));
+                    }
+                });
+            </script>
+        </main>
+    </div>
+    
+</body>
