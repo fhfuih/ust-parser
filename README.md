@@ -17,7 +17,7 @@ A simple navigation page for HKUST students
 
 ## Notes
 
-In case of lagging (especially on mobile phone), use Chrome :see_no_evil:
+In case of animation lagging (especially on mobile phone), use Chrome :see_no_evil:
 
 ## License
 
