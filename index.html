@@ -1,5 +1,5 @@
 <head>
-    <title>UST::parser</title>
+    <title>UST::parser | HKUST common sites navigation</title>
     <meta name="description" content="A simple navigation page for HKUST students">
     <meta name="author" content="zhuangbi">
     <meta name="keywords" content="HKUST,navigation">
@@ -345,7 +345,7 @@
                 function expand(elem) {
                     elem.removeClass("inverted");
                     elem.addClass("raised");
-                    elem.parent().children(".spoiler").show("normal");
+                    elem.parent().children(".spoiler").slideDown();
                 }
     
                 function collapse(elem) {
@@ -353,7 +353,7 @@
                         elem.addClass("inverted");
                     }
                     elem.removeClass("raised");
-                    elem.parent().children(".spoiler").hide("normal");
+                    elem.parent().children(".spoiler").slideUp();
                 }
     
                 $(".spoiler").hide();
