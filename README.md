@@ -9,9 +9,9 @@ A simple navigation page for HKUST students
 
 ## To-do
 
-[ ] - More links if needed
-[ ] - Search bar
-[ ] - Put links and data inside a `yaml` and use some fancy build tools
+- [ ] More links if needed
+- [ ] Search bar
+- [ ] Put links and data inside a `yaml` and use some fancy build tools
 
 ## License
 
