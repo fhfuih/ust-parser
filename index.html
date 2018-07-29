@@ -1,5 +1,9 @@
 <head>
     <title>UST::parser</title>
+    <meta name="description" content="A simple navigation page for HKUST students">
+    <meta name="author" content="zhuangbi">
+    <meta name="keywords" content="HKUST,navigation">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" integrity="sha256-ncjDAd2/rm/vaNTqp7Kk96MfSeHACtbiDU9NWKqNuCI=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -79,10 +83,23 @@
         .ui.menu .item {
             line-height: unset;
         }
+        @media only screen and (max-width: 767px) {
+            .ui.mobile.hide {
+                display: none;
+            }
+        }
+        @media only screen and (min-width: 767px) {
+            .ui.mobile.only {
+                display: none;
+            }
+        }
+        .ui.edged.menu {
+            border-radius: 0 !important;
+        }
     </style>
 </head>
 <body>
-    <aside class="ui sidebar inverted large vertical menu">
+    <aside class="ui sidebar inverted large vertical menu mobile hide">
         <div class="item">
             <header class="ui vertical segment inverted center aligned icon header">
                 <i class="compass outline icon"></i>
@@ -95,7 +112,7 @@
            class="item"><i class="paper plane icon"></i>Deploy your own personal page with HKUST ITSC</a>
     </aside>
     <div class="pusher">
-        <button class="ui black top upper attached big icon button toggler">
+        <button class="ui black top upper attached big icon button toggler mobile hide">
             <i class="bars icon"></i>
         </button>
         <script>
@@ -360,6 +377,11 @@
                 });
             </script>
         </main>
-    </div>
-    
+        <div class="ui inverted edged big fluid vertical menu mobile only">
+            <a href="https://github.com/fhfuih/ust-parser" class="item"><i class="github icon"></i>View on Github</a>
+    <!--         <a href="#" class="item"><i class="download icon"></i>Offline Version</a> -->
+            <a href="http://itsc.ust.hk/services/general-it-services/communication-collaboration/home"
+               class="item"><i class="paper plane icon"></i>Deploy your own personal page with HKUST ITSC</a>
+        </div>
+    </div>  
 </body>
