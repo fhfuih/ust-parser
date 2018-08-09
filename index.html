@@ -39,12 +39,17 @@
         }
 
         /* search bar */
-        #search-bar-container {
+        #search-bar-wrapper {
             margin-top: 0;
             margin-bottom: 0;
         }
+        #search-bar-container {
+            box-shadow: 0 2px 4px 0 rgba(34,36,38,.12);
+        }
         .ui.form.flex-form {
             display: flex;
+            margin: 0;
+            align-items: center;
         }
         .ui.form.flex-form .fluid.input {
             flex: auto;
@@ -140,14 +145,12 @@
         </script>
         <header class="ui vertical basic padded segment">
             <h1 class="ui center aligned header" id="page-title">UST::parser</h1>
-            <div class="ui centered grid container" id="search-bar-container">
-                <div class="ten wide computer twelve wide tablet fourteen wide mobile column">
+            <div class="ui centered grid container" id="search-bar-wrapper">
+                <div class="ten wide computer twelve wide tablet fourteen wide mobile column" id="search-bar-container">
                     <form action="#" method="GET" target="_blank" class="ui form flex-form" id="search-form">
                         <div class="ui icons dropdown" id="engine-dropdown">
-                            <input type="hidden" id="engine">
-                            <div class="text">
-                                <i class="google icon"></i>
-                            </div>
+                            <input type="hidden" id="engine" value="google">
+                            <div class="text"></div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
                                 <div class="item" data-value="google"><i class="google icon"></i></div>
@@ -160,8 +163,8 @@
                         </script>
                         <div class="ui fluid big transparent icon input">
                             <input type="text" name="query" id="query"
-                                placeholder="Feeling lucky today?">
-                            <i class="search icon"></i>
+                                placeholder="Feeling lucky today?" autocomplete="off" autofocus>
+                            <i class="search link icon"></i>
                         </div>
                     </form>
                     <script>
@@ -180,10 +183,28 @@
                             },
                         }
                         $("#search-form").submit(function () {
-                            var engine = $("#engine").val();
+                            let engine = $("#engine").val();
                             $("#search-form").attr("action", engineDict[engine].url);
                             $("#query").attr("name", engineDict[engine].keyword)
-                            $("#engine").removeAttr("name");
+                        })
+                        $("#query").keydown(function (e) {
+                            if (e.which == 38) {
+                                //up
+                                let prev = $(".ui.dropdown").dropdown("get item").prev();
+                                if(!prev.html()) {
+                                    prev = $("div.menu>div.item:last-child")
+                                }
+                                let value = prev.attr("data-value");
+                                $(".ui.dropdown").dropdown("set selected", value);
+                            } else if (e.which == 40) {
+                                //down
+                                let next = $(".ui.dropdown").dropdown("get item").next();
+                                if(!next.html()) {
+                                    next = $("div.menu>div.item:first-child")
+                                }
+                                let value = next.attr("data-value");
+                                $(".ui.dropdown").dropdown("set selected", value);
+                            }
                         })
                     </script>
                 </div>
