@@ -6,7 +6,7 @@
     <meta property="og:title" content="UST::parser">
     <meta property="og:description" content="A simple navigation page for HKUST students">
     <meta property="og:url" content="zhuangbi.student.ust.hk">
-    <meta property="og:image" content="favicons/favicon-196x196-precomposed.png">
+    <meta property="og:image" content="favicons/favicon-180x180-precomposed.png">
     <meta property="og:type" content="website">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,7 @@
     <link rel="icon" href="favicons/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicons/favicon-48x48.png" type="image/png" sizes="48x48">
     <link rel="icon" href="favicons/favicon-96x96.png" type="image/png" sizes="96x96">
-    <link rel="apple-touch-icon" href="favicons/favicon-128x128-precomposed.png">
-    <link rel="apple-touch-icon" href="favicons/favicon-196x196-precomposed.png" sizes="196x196">
+    <link rel="apple-touch-icon" href="favicons/favicon-180x180-precomposed.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" integrity="sha256-ncjDAd2/rm/vaNTqp7Kk96MfSeHACtbiDU9NWKqNuCI=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js" integrity="sha256-0gIvTkdsp0OOeV8tx3UTdi3ehppGwZbzQMvZJYhbzsE=" crossorigin="anonymous"></script>
@@ -39,13 +38,20 @@
             font-weight: lighter;
         }
 
-        /* search bar centering and margin adjustment */
+        /* search bar */
         #search-bar-container {
             margin-top: 0;
             margin-bottom: 0;
         }
-        #search-bar {
-            width: 100%;
+        .ui.form.flex-form {
+            display: flex;
+        }
+        .ui.form.flex-form .fluid.input {
+            flex: auto;
+            margin-left: 20px;
+        }
+        .ui.icons.dropdown .icon {
+            margin: unset;
         }
 
         /* .inverted.segment do not have borders by default,
@@ -83,6 +89,9 @@
         }
 
         /* sidebar */
+        #logo-icon {
+            width: 96px;
+        }
         .ui.top.upper.attached.button {
             border-width: 0;
             border-radius: 0 .28571429rem .28571429rem 0;
@@ -113,7 +122,7 @@
     <aside class="ui sidebar inverted large vertical menu mobile hide">
         <div class="item">
             <header class="ui vertical segment inverted center aligned icon header">
-                <i class="compass outline icon"></i>
+                <img src="favicons/favicon.svg" alt="UST::parser logo" class="icon" id="logo-icon">
                 <div class="content">UST::parser</div>
             </header>
         </div>
@@ -131,15 +140,52 @@
         </script>
         <header class="ui vertical basic padded segment">
             <h1 class="ui center aligned header" id="page-title">UST::parser</h1>
-            <div class="ui doubling centered grid container" id="search-bar-container">
-                <div class="ten wide column">
-                    <div class="ui fluid search">
-                        <div class="ui icon disabled input" id="search-bar">
-                            <input type="search" class="prompt" placeholder="Not yet done :(">
+            <div class="ui centered grid container" id="search-bar-container">
+                <div class="ten wide computer twelve wide tablet fourteen wide mobile column">
+                    <form action="#" method="GET" target="_blank" class="ui form flex-form" id="search-form">
+                        <div class="ui icons dropdown" id="engine-dropdown">
+                            <input type="hidden" id="engine">
+                            <div class="text">
+                                <i class="google icon"></i>
+                            </div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item" data-value="google"><i class="google icon"></i></div>
+                                <div class="item" data-value="bing"><i class="microsoft icon"></i></div>
+                                <div class="item" data-value="baidu"><i class="paw icon"></i></div>
+                            </div>
+                        </div>
+                        <script>
+                            $(".ui.dropdown").dropdown();
+                        </script>
+                        <div class="ui fluid big transparent icon input">
+                            <input type="text" name="query" id="query"
+                                placeholder="Feeling lucky today?">
                             <i class="search icon"></i>
                         </div>
-                        <div class="result"></div>
-                    </div>
+                    </form>
+                    <script>
+                        var engineDict = {
+                            "google": {
+                                "url": "https://www.google.com/search",
+                                "keyword": "q"
+                            },
+                            "bing": {
+                                "url": "https://www.bing.com/search",
+                                "keyword": "q"
+                            },
+                            "baidu": {
+                                "url": "https://www.baidu.com/s",
+                                "keyword": "wd"
+                            },
+                        }
+                        $("#search-form").submit(function () {
+                            var engine = $("#engine").val();
+                            $("#search-form").attr("action", engineDict[engine].url);
+                            $("#query").attr("name", engineDict[engine].keyword)
+                            $("#engine").removeAttr("name");
+                        })
+                    </script>
                 </div>
             </div>
         </header>
