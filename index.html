@@ -146,7 +146,7 @@
 <!--         <a href="#" class="item"><i class="download icon"></i>Offline Version</a> -->
         <a href="http://itsc.ust.hk/services/general-it-services/communication-collaboration/home"
            class="item"><i class="paper plane icon"></i>Deploy your own personal page with HKUST ITSC</a>
-        <a href="#" class="item" id="modal-triggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
+        <a href="#" class="item modal-triggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
     </aside>
     <div class="pusher">
         <button class="ui black top upper attached big icon button toggler mobile hide">
@@ -473,9 +473,11 @@
     <!--         <a href="#" class="item"><i class="download icon"></i>Offline Version</a> -->
             <a href="http://itsc.ust.hk/services/general-it-services/communication-collaboration/home"
                class="item"><i class="paper plane icon"></i>Deploy your own personal page with HKUST ITSC</a>
+            <a href="#" class="item modal-triggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
         </div>
     </div>
     <div class="ui large basic modal">
+        <i class="close icon"></i>
         <div class="header">
             License, credit and stuff
         </div>
@@ -493,6 +495,6 @@
     </div>
     <script>
         $(".ui.modal").modal();
-        $(".ui.modal").modal("attach events", "#modal-triggerer", "show");
+        $(".ui.modal").modal("attach events", ".modal-triggerer", "show");
     </script>
 </body>
