@@ -1,0 +1,26 @@
+{
+  "name": "ust-parser",
+  "version": "1.0.0",
+  "description": "A simple navigation page for HKUST students",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhfuih/ust-parser.git"
+  },
+  "author": "fhfuih",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fhfuih/ust-parser/issues"
+  },
+  "homepage": "https://github.com/fhfuih/ust-parser#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-minifier": "^1.2.2"
+  },
+  "dependencies": {}
+}
