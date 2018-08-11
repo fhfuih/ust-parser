@@ -5,7 +5,7 @@ A simple navigation page for HKUST students
 ## Depencencies
 
 - jQuery
-- Semantic-ui (v2.3.1)
+- Semantic-ui (v2.3.1, higher versions break scrolling on mobile devices)
 
 ## Build
 
@@ -25,9 +25,11 @@ npm install
 ```
 
 Then you can build distributions by
+
 ```
 gulp
 ```
+
 which simply minifies everything and copy resources into a single folder `dist`.
 
 ## To-do
