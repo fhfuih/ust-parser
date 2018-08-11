@@ -5,11 +5,34 @@ A simple navigation page for HKUST students
 ## Depencencies
 
 - jQuery
-- Semantic-ui
+- Semantic-ui (v2.3.1)
+
+## Build
+
+This project uses gulp to build distribution automatically.
+
+Clone the project to your computer
+
+```
+git clone https://github.com/fhfuih/ust-parser.git
+cd ust-parser
+```
+
+Install node.js and install dependencies by
+
+```
+npm install
+```
+
+Then you can build distributions by
+```
+gulp
+```
+which simply minifies everything and copy resources into a single folder `dist`.
 
 ## To-do
 
-- [ ] Search bar
+- [x] Search bar
 - [x] Favicon
 - [ ] Fully offline version (if possible)
 - [ ] Put links and data inside a `yaml` and use some fancy build tools
