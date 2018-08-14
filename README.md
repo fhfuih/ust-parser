@@ -9,7 +9,7 @@ A simple navigation page for HKUST students
 
 ## Build
 
-This project uses gulp to build distribution automatically.
+This project uses nunjucks and gulp to build distribution automatically.
 
 Clone the project to your computer
 
@@ -30,14 +30,18 @@ Then you can build distributions by
 gulp
 ```
 
-which simply minifies everything and copy resources into a single folder `dist`.
+which loads data, minifies everything and copies resources into the folder `dist`.
+
+## Templating
+
+Upon using nunjucks template engine, you can easily add/remove entries by editing `src/template/data.yaml`, without any HTML/CSS/JS knowledge. Documentation is written at the top of the file.
 
 ## To-do
 
 - [x] Search bar
 - [x] Favicon
 - [ ] Fully offline version (if possible)
-- [ ] Put links and data inside a `yaml` and use some fancy build tools
+- [x] Put links and data inside a `yaml` and use some fancy build tools
 - [ ] More links if needed
 
 ## Notes
