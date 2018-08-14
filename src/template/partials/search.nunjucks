@@ -1,0 +1,17 @@
+<form action="#" method="GET" target="_blank" class="ui form flex-form" id="search-form">
+    <div class="ui icons dropdown" id="engine-dropdown">
+        <input type="hidden" id="engine" value="{{search[0].name}}">
+        <div class="text"></div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+        {% for engine in search %}
+            <div class="item" data-value="{{engine.name}}"><i class="{{engine.icon}} icon"></i></div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="ui fluid big transparent icon input">
+        <input type="text" name="query" id="query"
+            placeholder="Feeling lucky today?" autocomplete="off" autofocus>
+        <i class="search link icon"></i>
+    </div>
+</form>

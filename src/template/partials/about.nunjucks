@@ -1,0 +1,17 @@
+<div class="ui large basic modal">
+    <i class="close icon"></i>
+    <div class="header">
+        License, credit and stuff
+    </div>
+    <div class="image content">
+        <img src="resource/logo-white.svg" alt="UST::parser" class="image" id="modal-logo">
+        <div class="description">
+            <p>This page is open-sourced under MIT license, which means you can do <em>almost</em> whatever the heck you like with its source code.</p>
+            <p>This page is hosted on the personal homepage server provided by HKUST, which is an awesome service thanks to our rich school.</p>
+            <p>This page has taken many links sort by my friend <a href="https://guidehkust.weebly.com/" target="_blank">Robert Zhao in his Web Guide@HKUST</a>, which is a great webpage and indicates that the official online information for HKUST is so scattered that more than one person comes up with the idea of a navigation page.</p>
+            <p>This page also refer to some links offered in MSSSUG Freshman Guide, which makes me feel good because this Chinese guide has once helped me a lot and now I am also doing something good at least for the freshman.</p>
+            <p>This page is initially "advertised" only by me and some friends of mine, and now perhaps the friends of the friends of mine and blabla, which means I thank everyone who recognizes my efforts and shares this page all the way to you, and you also, if you feel benefited from this page, too. </p>
+            <p>This section is "stylized" intentionally, which means you will think of me as someone having only secondary-school-level English skills on spotting the same "which" clause structure in every paragraph until you reach here and can't help laughing because you find out that not only this is just another one of the boring jokes of mine but also this sentence especially is so bloody long as if it is questioning you why you have the patience to finish reading it.</p>
+            </div>
+    </div>
+</div>

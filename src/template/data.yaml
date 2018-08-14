@@ -1,0 +1,278 @@
+# data.yaml
+
+# This file stores all the data to be injected to the template on `gulp`.
+
+# Add your own:
+#   If you want to add some entries, follow the same YAML format.
+#   Notice the tiny dash (-) everywhere, don't forget to add that character when you are adding your own data.
+
+# Icon:
+#   Upon choosing an icon, you must strictly choose a valid icon in FontAwesome and write its name.
+#   The list of supported icons is at https://semantic-ui.com/elements/icon.html
+
+# Color:
+#   Upon choosing a color, you must strictly choose a valid color provided by Semantic-UI.
+#   Ths list of supported colors is at https://semantic-ui.com/usage/theming.html#sitewide-defaults.
+#   You will soon find out that there are only two colors left. Bite me!
+
+# Search:
+#   Upon choosing a search engine, you must check its url and write correct url and key
+
+# List and sub-list:
+#   You can build a top-level list of links and a second-level list. No more levels will be used.
+#   An entry in a top-level list can have no url, but the template assumes your entries in every second-level list have urls,
+#   because otherwise it will be pointless.
+
+# Bottom message:
+#   If you provide a "bottom" string in a category, a info-level message box will be attached to the bottom of the box.
+
+# Have fun!
+menu: 
+  - 
+    entry: View on Github
+    icon: github
+    url: https://github.com/fhfuih/ust-parser
+  - 
+    entry: Deploy your own personal page with HKUST ITSC
+    icon: paper plane
+    url: http://itsc.ust.hk/services/general-it-services/communication-collaboration/home
+search:
+  - 
+    name: google
+    icon: google
+    url: https://www.google.com/search
+    key: q
+  - 
+    name: bing
+    icon: microsoft
+    url: https://www.bing.com/search
+    key: q
+  - 
+    name: baidu
+    icon: paw
+    url: https://www.baidu.com/s
+    key: wd
+main:
+  - 
+    category: Network
+    color: red
+    icon: globe
+    content: 
+      - 
+        title: Wi-Fi Access
+        url: http://itsc.ust.hk/services/general-it-services/wifi/non-windows-device/
+      - 
+        title: VPN
+        url: http://itsc.ust.hk/apps/vpn/connect.html
+      - 
+        title: 2FA (Two Factor Authentication)
+        url: https://itsc.ust.hk/cyber-security/2FA
+        sub:
+          - 
+            title: Duo Self-Service Portal
+            url: http://myaccount.ust.hk/duoportal
+          - 
+            title: Duo Bypass Code
+            url: http://itsc.ust.hk/2fa/bypass
+          - 
+            title: Mobile Lost / Change
+            url: http://itsc.ust.hk/services/cyber-security/duo/update-your-duo-mobile-device-records
+      - 
+        title: Account Management
+        url: http://itsc.ust.hk/services/general-it-services/user-account/manage-my-account/
+  - 
+    category: Tools
+    color: teal
+    icon: wrench
+    content:
+      - 
+        title: iLearn
+        url: https://ilearn.ust.hk/
+        sub:
+          - 
+            title: Canvas
+            url: https://canvas.ust.hk/
+          - 
+            title: SFQ
+            url: https://asset.ust.hk/asset/mobile.do
+          - 
+            title: iPRS
+            url: https://prsmob.ust.hk/ars/mobile/home/iLearn
+      - 
+        title: Path Advisor
+        url: http://pathadvisor.ust.hk/
+      - 
+        title: Office 365
+        url: https://www.office.com/
+        sub:
+          - 
+            title: Outlook Email
+            url: http://o365.ust.hk/
+          - 
+            title: Desktop Application
+            url: https://portal.office.com/OLS/MySoftware.aspx
+      - 
+        title: People Search
+        url: http://itsc.ust.hk/cgi-bin/comdir/comdir.html
+  - 
+    category: Freshman
+    color: yellow
+    icon: lightbulb
+    content:
+      - 
+        title: Application for Admission
+        sub:
+          - 
+            title: UG Application
+            url: https://www.ab.ust.hk/applyUG
+          - 
+            title: PG Application
+            url: https://www.ab.ust.hk/applyPG
+      - 
+        title: New Student Registration
+        sub: 
+          - 
+            title: UG Registration
+            url: http://arr.ust.hk/ug_reg
+          - 
+            title: PG Registration
+            url: http://arr.ust.hk/pg_reg
+      - 
+        title: Account Activation
+        url: http://myaccount.ust.hk/activate
+      - 
+        title: New Student Orientation (First Year Success)
+        url: http://fys.ust.hk/
+      - 
+        title: Non-local Student Guide
+        url: http://nlss.ust.hk/
+      - 
+        title: Hall Application
+        url: https://www.ab.ust.hk/applyhall
+  - 
+    category: Facilities
+    color: green
+    icon: puzzle piece
+    content:
+      - 
+        title: Facilities Booking System
+        url: https://w6.ab.ust.hk/fbs
+      - 
+        title: Library
+        url: https://library.ust.hk/
+        sub: 
+          - 
+            title: Library Room Booking
+            url: https://lbbooking.ust.hk/
+      - 
+        title: Printing Facilities
+        url: https://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/
+        sub: 
+          - 
+            title: Multi-functions &amp; Satellite Printer
+            url: http://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/satellite-printers/#setup
+          - 
+            title: Library Printer
+            url: http://library.ust.hk/services/facilities/copying-scanning-printing/#wireless
+          - 
+            title: Purchase Print Budget
+            url: https://pmt.ust.hk:8443/printbudget/Purchase.jsp
+  - 
+    category: Faculty
+    color: purple
+    icon: thumbtack
+    content: 
+      - 
+        title: SHRLO (Student Housing &amp; Residential Life Office)
+        url: http://shrl.ust.hk/
+      - 
+        title: SAO (Student Affairs Office)
+        url: https://sao.ust.hk/
+      - 
+        title: SFAO (Scholarships &amp; Financial Aid Office)
+        url: https://sfao.ust.hk/
+      - 
+        title: ARRO (Academic Records &amp; Registration Office)
+        url: http://arr.ust.hk/
+      - 
+        title: ITSC (Information Technology Service Center)
+        url: https://itsc.ust.hk/
+      - 
+        title: Counseling &amp; Wellness Center
+        url: https://counsel.ust.hk/
+      - 
+        title: Schools &amp; Programs Offices
+        url: https://www.ust.hk/academics/schools-programs-office
+  - 
+    category: Academic
+    color: blue 
+    icon: graduation cap
+    content: 
+      - 
+        title: My Portal
+        url: http://my.ust.hk/
+      - 
+        title: Class Schedule &amp; Quota
+        url: http://arr.ust.hk/schedule
+      - 
+        title: Program &amp; Course Catalog
+        url: http://prog-crs.ust.hk/
+      - 
+        title: Credit Transfer for Undergraduates
+        url: https://crtran.ust.hk/
+      - 
+        title: Past Paper
+        url: http://petergao.net/ustpastpaper/index.php
+  - 
+    category: Courses
+    color: pink
+    icon: flask
+    content: 
+      - 
+        title: Center for Language Education
+        url: http://cle.ust.hk/
+        sub:
+          - 
+            title: ELPA
+            url: http://cle.ust.hk/tests/elpa/
+          - 
+            title: CLE Assignment Feedback
+            url: https://feedback.cle.ust.hk/
+      - 
+        title: HLTH 1010 
+        url: http://hlth1010.ust.hk/
+      - 
+        title: UROP
+        url: https://urop.ust.hk/
+  -
+    category: Forums
+    color: orange
+    icon: users
+    content: 
+      - 
+        title: UST Space
+        url: https://ust.space/
+      - 
+        title: Cwiki (Mainland Chinese)
+        url: http://ug.msss.ust.hk/cwiki_home
+  - 
+    category: Living
+    color: olive
+    icon: coffee
+    content: 
+      - 
+        title: Hong Kong ID Card
+        url: https://www.immd.gov.hk/eng/services/hkid.html
+      - 
+        title: MTR Services
+        url: http://www.mtr.com.hk/en/customer/main/index.html
+      - 
+        title: Octopus
+        url: https://www.octopus.com.hk/
+      - 
+        title: Discover Hong Kong
+        url: https://www.discoverhongkong.com/
+      - 
+        title: Hong Kong Observatory
+        url: http://www.hko.gov.hk/contente.htm
+    bottom: Links in this section are all directing to <strong>external sites</strong>.

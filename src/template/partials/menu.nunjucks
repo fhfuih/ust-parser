@@ -1,0 +1,18 @@
+{% macro menu(device, menu) %}
+{% if device == 'computer' %}
+<aside class="ui sidebar inverted large vertical menu mobile hide">
+    <div class="item">
+        <header class="ui vertical segment inverted center aligned icon header">
+            <img src="resource/logo-white.svg" alt="UST::parser logo" class="icon" id="sidebar-logo">
+            <div class="content">UST::parser</div>
+        </header>
+    </div>
+{% elif device == 'mobile' %}
+<aside class="ui inverted edged big fluid vertical menu mobile only">
+{% endif %}
+    {% for item in menu %}
+    <a href="{{item.url}}" class="item"><i class="{{item.icon}} icon"></i>{{item.entry}}</a>
+    {% endfor %}
+    <a href="#" class="item modal-triggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
+</aside>
+{% endmacro %}

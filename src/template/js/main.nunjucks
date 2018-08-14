@@ -1,0 +1,75 @@
+$(document).ready(function () {
+    // sidebar initialization
+    $(".sidebar.menu").sidebar("attach events", ".toggler");
+    // search engine dropdown initialization
+    $(".ui.dropdown").dropdown();
+    // main section initialization
+    $(".spoiler").hide();
+    // modal initialization
+    $(".ui.modal").modal();
+    // modal trigerring
+    $(".ui.modal").modal("attach events", ".modal-triggerer", "show");
+    // search form actions and keyboard events
+    var engineDict = {
+        {% for engine in search %}
+        "{{ engine.name }}": {
+            "url": "{{ engine.url }}",
+            "key": "{{ engine.key }}",
+        },
+        {% endfor %}
+    };
+    $("#search-form").submit(function () {
+        var engine = $("#engine").val();
+        $("#search-form").attr("action", engineDict[engine].url);
+        $("#query").attr("name", engineDict[engine].key)
+    });
+    $("#query").keydown(function (e) {
+        if (e.which == 38) {
+            //up
+            var prev = $(".ui.dropdown").dropdown("get item").prev();
+            if(!prev.html()) {
+                prev = $("div.menu>div.item:last-child")
+            }
+            var value = prev.attr("data-value");
+            $(".ui.dropdown").dropdown("set selected", value);
+        } else if (e.which == 40) {
+            //down
+            var next = $(".ui.dropdown").dropdown("get item").next();
+            if(!next.html()) {
+                next = $("div.menu>div.item:first-child")
+            }
+            var value = next.attr("data-value");
+            $(".ui.dropdown").dropdown("set selected", value);
+        }
+    });
+    // main section mouse events
+    function expand(elem) {
+        elem.removeClass("inverted");
+        elem.addClass("raised");
+        elem.parent().children(".spoiler").slideDown();
+    };
+    function collapse(elem) {
+        if (!elem.hasClass("inverted")) {
+            elem.addClass("inverted");
+        }
+        elem.removeClass("raised");
+        elem.parent().children(".spoiler").slideUp();
+    };
+    $(".main.segment").mouseenter(function () {
+        if ($(this).hasClass("inverted")) {
+            $(this).removeClass("inverted");
+        }
+    });
+    $(".main.segment").mouseleave(function () {
+        if (!$(this).hasClass("raised")) {
+            $(this).addClass("inverted");
+        }
+    });
+    $(".main.segment").click(function () {
+        if ($(this).hasClass("raised")) {
+            collapse($(this));
+        } else {
+            expand($(this));
+        }
+    });
+})

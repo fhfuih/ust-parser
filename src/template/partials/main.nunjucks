@@ -1,0 +1,39 @@
+<div class="ui doubling stackable relaxed four column grid container">
+    {% for category in main %}
+    <div class="column">
+        <div class="ui inverted {{category.color}} padded main segment">
+            <h2 class="ui header">
+                <i class="{{category.icon}} icon"></i>
+                <div class="content">{{category.category}}</div>
+            </h2>
+        </div>
+        <div class="ui segments spoiler">
+            <div class="ui padded {% if category.bottom %}top attached{% endif %} nav segment">
+                <div class="ui relaxed large link list">
+                    {% for item in category.content %}
+                    <div class="item">
+                        {% if item.url %}
+                        <a href="{{item.url}}">{{item.title}}</a>
+                        {% else %}
+                        <div>{{item.title}}</div>
+                        {% endif %}
+                        {% if item.sub %}
+                        <div class="list">
+                            {% for subitem in item.sub %}
+                            <a href="{{subitem.url}}" class="item">{{subitem.title}}</a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% if category.bottom %}
+            <div class="ui bottom attached info message">
+                <p>{{category.bottom}}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
