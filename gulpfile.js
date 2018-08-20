@@ -47,10 +47,12 @@ gulp.task('build', function () {
     .pipe(data(yaml.safeLoad(fs.readFileSync('src/template/data.yaml'))))
     .pipe(nunjucks.compile())
     // rename for the sake of output file and ext detection by minifier
-    .pipe(rename('index.html'))
+    .pipe(rename('index.dev.html'))
     // inline-ize js and css
-    .pipe(inline({compress: false}))
+    .pipe(inline({compress: false, beautify: true}))
+    .pipe(gulp.dest('dist/'))
     // minify
+    .pipe(rename('index.html'))
     .pipe(minify({
       minify: true,
       minifyHTML: htmlConfig,
