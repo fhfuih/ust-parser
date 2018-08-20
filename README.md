@@ -2,10 +2,12 @@
 
 A simple navigation page for HKUST students
 
-## Depencencies
+## Front-end Libraries
 
 - jQuery
 - Semantic-ui (v2.3.1, higher versions break scrolling on mobile devices)
+
+CDNJS is used
 
 ## Build
 
@@ -34,7 +36,7 @@ which loads data, minifies everything and copies resources into the folder `dist
 
 ## Templating
 
-Upon using nunjucks template engine, you can easily add/remove entries by editing `src/template/data.yaml`, without any HTML/CSS/JS knowledge. Documentation is written at the top of the file.
+Upon using nunjucks template engine, you can easily add/remove entries by editing `src/template/data.yaml`, without touching any HTML/CSS/JS codes. Documentation is written at the top of the file.
 
 ## To-do
 
