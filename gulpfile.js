@@ -23,6 +23,11 @@ var htmlConfig = {
   minifyJS: jsConfig,
 };
 
+var templateData = Object.assign(
+  yaml.safeLoad(fs.readFileSync('src/template/data.yaml')),
+  {site: yaml.safeLoad(fs.readFileSync('src/template/site.yaml'))}
+);
+
 gulp.task('copyResource', function () {
   return gulp.src([
     'src/resource/*',
@@ -44,7 +49,9 @@ gulp.task('clean-js', function () {
 gulp.task('build', function () {
   // inject data to template
   return gulp.src('src/template/index.nunjucks')
-    .pipe(data(yaml.safeLoad(fs.readFileSync('src/template/data.yaml'))))
+    .pipe(data(function (file) {
+      return templateData;
+    }))
     .pipe(nunjucks.compile())
     // rename for the sake of output file and ext detection by minifier
     .pipe(rename('index.dev.html'))
@@ -64,7 +71,9 @@ gulp.task('build', function () {
 
 gulp.task('build-js', function () {
   return gulp.src('src/template/js/main.nunjucks')
-    .pipe(data(yaml.safeLoad(fs.readFileSync('src/template/data.yaml'))))
+    .pipe(data(function (file) {
+      return templateData;
+    }))
     .pipe(nunjucks.compile())
     .pipe(rename('main.js'))
     .pipe(gulp.dest('src/template/js/'))

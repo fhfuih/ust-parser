@@ -1,6 +1,6 @@
 # data.yaml
 
-# This file stores all the data to be injected to the template on `gulp`.
+# This file stores all the content data to be injected to the template on `gulp`.
 
 # Add your own:
 #   If you want to add some entries, follow the same YAML format.

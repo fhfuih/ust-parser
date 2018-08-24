@@ -9,6 +9,7 @@
     <meta property="og:description" content="A simple navigation page for HKUST students">
     <meta property="og:url" content="http://zhuangbi.student.ust.hk">
     <meta property="og:image" content="resource/logo-600x600.png">
+    <meta property="og:url" content="{{ site.url }}">
     <meta property="og:type" content="website">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
