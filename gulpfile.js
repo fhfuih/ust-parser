@@ -84,3 +84,6 @@ gulp.task('default', gulp.series(
   gulp.parallel('copyResource', gulp.series('build-js', 'build')),
   'clean-js'
 ));
+
+
+gulp.task('template', gulp.series('build-js', 'build'));
