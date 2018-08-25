@@ -1,0 +1,45 @@
+<div class="ui modal" id="shareModal">
+    <i class="close icon"></i>
+    <div class="header">Share</div>
+    <div class="content">
+        <div class="ui center aligned grid">
+            <div class="row">
+                <div class="ten column">
+                    <div class="ui medium form">
+                        <div class="inline field">
+                            <label>Copy link: </label>
+                            <div class="ui action input">
+                                <input type="text" value="{{ site.url }}" readonly id="siteUrl">
+                                <button class="ui right icon button" id="copyButton" data-content="Copied!">
+                                    <i class="copy icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="center aligned ten column">
+                    <div class="ui large icon buttons">
+                        <div class="ui facebook icon button">
+                            <i class="facebook f icon"></i>
+                        </div>
+                        <div class="ui twitter icon button">
+                            <i class="twitter icon"></i>
+                        </div>
+                        <div class="ui google plus icon button">
+                            <i class="google plus g icon"></i>
+                        </div>
+                        <div class="ui social qq icon button">
+                            <i class="qq icon"></i>
+                        </div>
+                        <div class="ui social wechat icon button">
+                            <i class="wechat icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

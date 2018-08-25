@@ -1,4 +1,4 @@
-<div class="ui large basic modal">
+<div class="ui large basic modal" id="aboutModal">
     <i class="close icon"></i>
     <div class="header">
         License, credit and stuff

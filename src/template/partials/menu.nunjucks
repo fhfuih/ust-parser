@@ -13,6 +13,7 @@
     {% for item in menu %}
     <a href="{{item.url}}" class="item"><i class="{{item.icon}} icon"></i>{{item.entry}}</a>
     {% endfor %}
-    <a href="#" class="item modal-triggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
+    <a href="#" class="item aboutTriggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
+    <a href="#" class="item shareTriggerer"><i class="share icon"></i>Share this website</a>
 </aside>
 {% endmacro %}

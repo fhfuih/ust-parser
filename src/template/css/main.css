@@ -107,7 +107,7 @@ and cause noticable displacement inside the container */
     border-radius: 0 !important;
 }
 
-/* modal */
+/* about */
 #modal-logo {
     max-width: 256px;
 }
@@ -117,3 +117,27 @@ and cause noticable displacement inside the container */
 .ui.large.modal .content {
     font-size: 1.15em;
 }
+
+/* share */
+.social.button {
+    text-shadow: none;
+    background-image: none;
+    color: #fff;
+}
+.social.button:hover {
+    color: #fff;
+    text-shadow: none;
+}
+.wechat.social.button {
+    background-color: #64aa23;
+}
+.wechat.social.button:hover {
+    background-color: #55a111;
+}
+.qq.social.button {
+    background-color: #faab07;
+}
+.qq.social.button:hover {
+    background-color: #f5a507;
+}
+

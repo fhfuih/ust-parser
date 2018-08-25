@@ -26,33 +26,29 @@
 <body>
     <!-- sidebar -->
     {{ build_menu('computer', menu) }}
-    <!-- end of sidebar -->
     <div class="pusher">
         <!-- button for sidebar -->
         <button class="ui black top upper attached big icon button toggler mobile hide">
             <i class="bars icon"></i>
         </button>
-        <!-- end of button for sidebar -->
         <header class="ui vertical basic padded segment">
             <h1 class="ui center aligned header" id="page-title">UST::parser</h1>
             <div class="ui centered grid container" id="search-bar-wrapper">
                 <div class="ten wide computer twelve wide tablet fourteen wide mobile column" id="search-bar-container">
                     <!-- search bar -->
                     {% include "./partials/search.nunjucks" %}
-                    <!-- end of search bar -->
                 </div>
             </div>
         </header>
         <main class="ui vertical basic segment">
             <!-- main segments -->
             {% include "./partials/main.nunjucks" %}
-            <!-- end of main segments -->
         </main>
         <!-- mobile sidebar -->
         {{ build_menu('mobile', menu) }}
-        <!-- end of mobile sidebar -->
         <!-- about -->
         {% include "./partials/about.nunjucks" %}
-        <!-- end of about -->
+        <!-- share -->
+        {% include "./partials/share.nunjucks" %}
     </div>
 </body>

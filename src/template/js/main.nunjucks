@@ -6,9 +6,16 @@ $(document).ready(function () {
     // main section initialization
     $(".spoiler").hide();
     // modal initialization
-    $(".ui.modal").modal();
-    // modal trigerring
-    $(".ui.modal").modal("attach events", ".modal-triggerer", "show");
+    $("#aboutModal").modal("attach events", ".aboutTriggerer", "show");
+    $("#shareModal").modal("attach events", ".shareTriggerer", "show");
+    // copy to clipboard button
+    $("#copyButton").popup({
+        on: "click"
+    });
+    $("#copyButton").click(function (e) {
+        $("#siteUrl").select();
+        document.execCommand("copy");
+    });
     // search form actions and keyboard events
     var engineDict = {
         {% for engine in search %}
