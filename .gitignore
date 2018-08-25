@@ -1,5 +1,7 @@
 # my dist
 dist/
+# site data
+site.yaml
 
 # Logs
 logs
