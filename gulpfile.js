@@ -48,18 +48,26 @@ gulp.task('clean-js', function () {
 
 gulp.task('build', function () {
   // inject data to template
-  return gulp.src('src/template/index.nunjucks')
+  return gulp.src('src/template/*.nunjucks')
     .pipe(data(function (file) {
       return templateData;
     }))
     .pipe(nunjucks.compile())
     // rename for the sake of output file and ext detection by minifier
-    .pipe(rename('index.dev.html'))
+    .pipe(rename({
+      suffix: '.dev',
+      extname: '.html'
+    }))
     // inline-ize js and css
-    .pipe(inline({compress: false, beautify: true}))
+    .pipe(inline({
+      compress: false,
+      beautify: true
+    }))
     .pipe(gulp.dest('dist/'))
     // minify
-    .pipe(rename('index.html'))
+    .pipe(rename(function (path) {
+      path.basename = path.basename.replace('.dev', '');
+    }))
     .pipe(minify({
       minify: true,
       minifyHTML: htmlConfig,
@@ -68,6 +76,10 @@ gulp.task('build', function () {
     }))
     .pipe(gulp.dest('dist/'))
 });
+
+gulp.task('build-policy', function () {
+  return gulp.src('src/template/policy.nunjucks')
+})
 
 gulp.task('build-js', function () {
   return gulp.src('src/template/js/main.nunjucks')
