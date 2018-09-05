@@ -1,9 +1,5 @@
 # my dist
 dist/
-# site data
-src/template/site.yaml
-# friend link data
-src/template/friends.yaml
 
 # Logs
 logs
@@ -78,3 +74,5 @@ typings/
 
 # Serverless directories
 .serverless
+src/template/friends.yaml
+src/template/site.yaml
