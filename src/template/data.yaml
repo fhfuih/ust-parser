@@ -36,6 +36,14 @@ menu:
     entry: Deploy your own personal page with HKUST ITSC
     icon: paper plane
     url: http://itsc.ust.hk/services/general-it-services/communication-collaboration/home
+  - 
+    entry: License, credit and stuff
+    icon: gem outline
+    modal: about
+  - 
+    entry: Share this website
+    icon: share
+    modal: share
 search:
   - 
     name: google

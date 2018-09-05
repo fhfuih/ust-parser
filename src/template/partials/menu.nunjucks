@@ -1,4 +1,5 @@
 {% macro menu(device, menu) %}
+
 {% if device == 'computer' %}
 <aside class="ui sidebar inverted large vertical menu mobile hide">
     <div class="item">
@@ -10,10 +11,14 @@
 {% elif device == 'mobile' %}
 <aside class="ui inverted edged big fluid vertical menu mobile only">
 {% endif %}
+
     {% for item in menu %}
+    {% if item.url %}
     <a href="{{item.url}}" class="item"><i class="{{item.icon}} icon"></i>{{item.entry}}</a>
+    {% else %}
+    <a href="#" class="item {{item.modal}}Triggerer"><i class="{{item.icon}} icon"></i>{{item.entry}}</a>
+    {% endif %}
     {% endfor %}
-    <a href="#" class="item aboutTriggerer"><i class="gem outline icon"></i>License, credit and stuff</a>
-    <a href="#" class="item shareTriggerer"><i class="share icon"></i>Share this website</a>
+
 </aside>
 {% endmacro %}

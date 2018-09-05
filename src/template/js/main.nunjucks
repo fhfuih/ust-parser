@@ -6,8 +6,11 @@ $(document).ready(function () {
     // main section initialization
     $(".spoiler").hide();
     // modal initialization
-    $("#aboutModal").modal("attach events", ".aboutTriggerer", "show");
-    $("#shareModal").modal("attach events", ".shareTriggerer", "show");
+    {% for item in menu %}
+    {% if item.modal %}
+    $("#{{item.modal}}Modal").modal("attach events", ".{{item.modal}}Triggerer", "show");
+    {% endif %}
+    {% endfor %}
     // copy to clipboard button
     $("#copyButton").popup({
         on: "click"

@@ -21,21 +21,21 @@
             <div class="row">
                 <div class="center aligned ten column">
                     <div class="ui large icon buttons">
-                        <div class="ui facebook icon button">
+                        <a class="ui facebook icon button" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | urlencode }}">
                             <i class="facebook f icon"></i>
-                        </div>
-                        <div class="ui twitter icon button">
+                        </a>
+                        <a class="ui twitter icon button" href="https://twitter.com/intent/tweet?url={{ site.url | urlencode }}">
                             <i class="twitter icon"></i>
-                        </div>
-                        <div class="ui google plus icon button">
+                        </a>
+                        <a class="ui google plus icon button" href="https://plus.google.com/share?url={{ site.url | urlencode }}">
                             <i class="google plus g icon"></i>
-                        </div>
-                        <div class="ui social qq icon button">
+                        </a>
+                        <button class="ui social qq icon button">
                             <i class="qq icon"></i>
-                        </div>
-                        <div class="ui social wechat icon button">
+                        </button>
+                        <button class="ui social wechat icon button">
                             <i class="wechat icon"></i>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
