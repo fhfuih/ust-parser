@@ -25,7 +25,8 @@ var htmlConfig = {
 
 var templateData = Object.assign(
   yaml.safeLoad(fs.readFileSync('src/template/data.yaml')),
-  {site: yaml.safeLoad(fs.readFileSync('src/template/site.yaml'))}
+  {site: yaml.safeLoad(fs.readFileSync('src/template/site.yaml'))},
+  {friends: yaml.safeLoad(fs.readFileSync('src/template/friends.yaml'))}
 );
 
 gulp.task('copyResource', function () {

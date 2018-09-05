@@ -44,6 +44,10 @@ menu:
     entry: Share this website
     icon: share
     modal: share
+  - 
+    entry: Link exchange
+    icon: thumbs up outline
+    modal: friends
 search:
   - 
     name: google

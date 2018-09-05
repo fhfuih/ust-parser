@@ -1,0 +1,13 @@
+<div class="ui basic modal" id="friendsModal">
+    <i class="close icon"></i>
+    <div class="header">Link Exchange</div>
+    <div class="content">
+        <div class="ui doubling relaxed four column grid">
+            {% for item in friends %}
+            <div class="column">
+                <a href="{{ item.url }}">{{ item.name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
