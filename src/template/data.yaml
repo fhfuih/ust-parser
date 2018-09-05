@@ -177,7 +177,7 @@ main:
         url: https://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/
         sub: 
           - 
-            title: Multi-functions &amp; Satellite Printer
+            title: Multi-functions & Satellite Printer
             url: http://itsc.ust.hk/services/academic-teaching-support/facilities/printing-facilities/satellite-printers/#setup
           - 
             title: Library Printer
@@ -191,25 +191,25 @@ main:
     icon: thumbtack
     content: 
       - 
-        title: SHRLO (Student Housing &amp; Residential Life Office)
+        title: SHRLO (Student Housing & Residential Life Office)
         url: http://shrl.ust.hk/
       - 
         title: SAO (Student Affairs Office)
         url: https://sao.ust.hk/
       - 
-        title: SFAO (Scholarships &amp; Financial Aid Office)
+        title: SFAO (Scholarships & Financial Aid Office)
         url: https://sfao.ust.hk/
       - 
-        title: ARRO (Academic Records &amp; Registration Office)
+        title: ARRO (Academic Records & Registration Office)
         url: http://arr.ust.hk/
       - 
         title: ITSC (Information Technology Service Center)
         url: https://itsc.ust.hk/
       - 
-        title: Counseling &amp; Wellness Center
+        title: Counseling & Wellness Center
         url: https://counsel.ust.hk/
       - 
-        title: Schools &amp; Programs Offices
+        title: Schools & Programs Offices
         url: https://www.ust.hk/academics/schools-programs-office
   - 
     category: Academic
@@ -220,10 +220,10 @@ main:
         title: My Portal
         url: http://my.ust.hk/
       - 
-        title: Class Schedule &amp; Quota
+        title: Class Schedule & Quota
         url: http://arr.ust.hk/schedule
       - 
-        title: Program &amp; Course Catalog
+        title: Program & Course Catalog
         url: http://prog-crs.ust.hk/
       - 
         title: Credit Transfer for Undergraduates
