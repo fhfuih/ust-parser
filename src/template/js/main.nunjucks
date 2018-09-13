@@ -1,6 +1,10 @@
 $(document).ready(function () {
     // sidebar initialization
     $(".sidebar.menu").sidebar("attach events", ".toggler");
+    // sidebar hide on window resize
+    $(window).resize(function () {
+        $(".ui.sidebar").sidebar('hide');
+    });
     // search engine dropdown initialization
     $(".ui.dropdown").dropdown();
     // main section initialization
