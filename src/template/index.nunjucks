@@ -1,6 +1,7 @@
 {% from "./partials/menu.nunjucks" import menu as build_menu %}
 
 <head>
+    {% include "./services/google_analytics.nunjucks" %}
     <title>UST::parser</title>
     <meta name="description" content="A simple navigation page for HKUST students">
     <meta name="author" content="zhuangbi">
