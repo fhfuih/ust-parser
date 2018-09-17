@@ -3,6 +3,8 @@
 # This file stores all the external links to be injected to `friends.nunjucks`, which is the 'link exchange' section, on `gulp`.
 
 # Add your own:
-#   If you want to add some entries, follow the same YAML format.
+#   If you want to add some entries, use the following YAML format.
+#   -
+#     name: John
+#     url: http://www.example.com 
 #   Notice the tiny dash (-) everywhere, don't forget to add that character when you are adding your own data.
-
