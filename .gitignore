@@ -76,3 +76,4 @@ typings/
 .serverless
 src/template/friends.yaml
 src/template/site.yaml
+src/template/services
