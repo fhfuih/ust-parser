@@ -4,7 +4,7 @@
         License, credit and stuff
     </div>
     <div class="image content">
-        <img src="resource/logo-white.svg" alt="UST::parser" class="image" id="modal-logo">
+        <img src="resource/logo-white.svg" alt="{{ site.title }}" class="image" id="modal-logo">
         <div class="description">
             <p>This page is open-sourced under MIT license, which means you can do <em>almost</em> whatever the heck you like with its source code.</p>
             <p>This page is hosted on the personal homepage server provided by HKUST, which is an awesome service thanks to our rich school.</p>

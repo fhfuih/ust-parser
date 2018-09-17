@@ -2,11 +2,11 @@
 
 <head>
     {% include "./services/google_analytics.nunjucks" %}
-    <title>UST::parser</title>
+    <title>{{ site.title }}</title>
     <meta name="description" content="A simple navigation page for HKUST students">
     <meta name="author" content="zhuangbi">
     <meta name="keywords" content="HKUST,navigation">
-    <meta property="og:title" content="UST::parser">
+    <meta property="og:title" content="{{ site.title }}">
     <meta property="og:description" content="A simple navigation page for HKUST students">
     <meta property="og:url" content="{{ site.url }}">
     <meta property="og:image" content="resource/og-image.png">
@@ -33,7 +33,7 @@
             <i class="bars icon"></i>
         </button>
         <header class="ui vertical basic padded segment">
-            <h1 class="ui center aligned header" id="page-title">UST::parser</h1>
+            <h1 class="ui center aligned header" id="page-title">{{ site.title }}</h1>
             <div class="ui centered grid container" id="search-bar-wrapper">
                 <div class="ten wide computer twelve wide tablet fourteen wide mobile column" id="search-bar-container">
                     <!-- search bar -->

@@ -4,8 +4,8 @@
 <aside class="ui sidebar inverted large vertical menu mobile hide">
     <div class="item">
         <header class="ui vertical segment inverted center aligned icon header">
-            <img src="resource/logo-white.svg" alt="UST::parser logo" class="icon" id="sidebar-logo">
-            <div class="content">UST::parser</div>
+            <img src="resource/logo-white.svg" alt="{{ site.title }} logo" class="icon" id="sidebar-logo">
+            <div class="content">{{ site.title }}</div>
         </header>
     </div>
 {% elif device == 'mobile' %}
