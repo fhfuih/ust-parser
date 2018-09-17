@@ -38,6 +38,14 @@ which loads data, minifies everything and copies resources into the folder `dist
 
 Upon using nunjucks template engine, you can easily add/remove entries by editing `src/template/data.yaml`, without touching any HTML/CSS/JS codes. Documentation is written at the top of the file.
 
+## Github-less files
+
+Direct building from the source will produce a similar page to my product but with following content trimmed. You can manually add entries in corresponding `.yaml` or content in `.nunjucks` files.
+
+- Links in the "Link exchange" modal. Data of which are in `src/template/friends.yaml`
+- Site information. Data of which are in `src/template/site.yaml`
+- External services like Google Analytics. Snippets of which are in dedicated files in `src/template/services/`. For example, `google_analytics.nunjucks`
+
 ## To-do
 
 - [x] Search bar
