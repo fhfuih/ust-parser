@@ -20,22 +20,25 @@
             </div>
             <div class="row">
                 <div class="center aligned ten column">
-                    <div class="ui large icon buttons">
-                        <a class="ui facebook icon button" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | urlencode }}">
+                    <div {# class="ui large icon buttons" #}>
+                        <a class="ui basic circular icon button" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url | urlencode }}">
                             <i class="facebook f icon"></i>
                         </a>
-                        <a class="ui twitter icon button" href="https://twitter.com/intent/tweet?url={{ site.url | urlencode }}">
+                        <a class="ui basic circular icon button" href="https://twitter.com/intent/tweet?url={{ site.url | urlencode }}">
                             <i class="twitter icon"></i>
                         </a>
-                        <a class="ui google plus icon button" href="https://plus.google.com/share?url={{ site.url | urlencode }}">
+                        <a class="ui basic circular plus icon button" href="https://plus.google.com/share?url={{ site.url | urlencode }}">
                             <i class="google plus g icon"></i>
                         </a>
-                        <button class="ui social qq icon button">
+                        <a class="ui basic circular weibo icon button" href="http://service.weibo.com/share/share.php?&title={{ site.url | urlencode }}">
+                            <i class="weibo icon"></i>
+                        </a>
+                        <a class="ui basic circular icon button" href="http://connect.qq.com/widget/shareqq/index.html?url={{ site.url | urlencode }}&title={{site.title}}">
                             <i class="qq icon"></i>
-                        </button>
-                        <button class="ui social wechat icon button">
-                            <i class="wechat icon"></i>
-                        </button>
+                        </a>
+                        {# <a class="ui circular icon button">
+                            <i class="weixin icon"></i>
+                        </a> #}
                     </div>
                 </div>
             </div>
