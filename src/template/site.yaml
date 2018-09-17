@@ -1,3 +1,7 @@
 # data.yaml
 
 # This file stores all the site data to be injected to the template on `gulp`.
+
+title: 
+url: 
+email: 
