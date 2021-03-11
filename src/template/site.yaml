@@ -3,5 +3,5 @@
 # This file stores all the site data to be injected to the template on `gulp`.
 
 title: UST::parser
-url: 
-email: 
+url: https://zhuangbi.student.ust.hk/ust-parser
+email: zhuangbi@connect.ust.hk

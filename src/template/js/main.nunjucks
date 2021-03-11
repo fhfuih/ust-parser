@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $('.ui.message.side-message.transition.hidden').transition('scale');
+    $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+    });
     // sidebar initialization
     $(".sidebar.menu").sidebar("attach events", ".toggler");
     // sidebar hide on window resize

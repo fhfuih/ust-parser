@@ -141,3 +141,9 @@ and cause noticable displacement inside the container */
     background-color: #f5a507;
 }
 
+/* side message */
+.ui.message.side-message {
+    position: fixed !important;
+    top: 2rem !important;
+    right: 1.5rem !important;
+}

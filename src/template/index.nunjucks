@@ -1,7 +1,14 @@
 {% from "./partials/menu.nunjucks" import menu as build_menu %}
 
 <head>
-    {% include "./services/google_analytics.nunjucks" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125898184-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-125898184-1');
+    </script>
     <title>{{ site.title }}</title>
     <meta name="description" content="A simple navigation page for HKUST students">
     <meta name="author" content="zhuangbi">
@@ -45,6 +52,20 @@
             <!-- main segments -->
             {% include "./partials/main.nunjucks" %}
         </main>
+        <div class="ui compact info message side-message transition hidden">
+            <i class="close icon"></i>
+            <div class="header">
+                Heads up for the change of domain!
+            </div>
+            <p>
+            The new domain for this website is <a href="https://zhuangbi.student.ust.hk/ust-parser">https://zhuangbi.student.ust.hk/ust-parser</a>.
+            </p>
+            <p>
+            I will redirect you to the new domain<emph> before April 2021</emph>.
+            <br/>
+            Meanwhile please update your bookmarks or home page URL. 😇
+            </p>
+        </div>
         <!-- mobile sidebar -->
         {{ build_menu('mobile', menu) }}
         <!-- about -->
